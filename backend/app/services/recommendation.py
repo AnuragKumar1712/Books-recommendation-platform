@@ -4,6 +4,8 @@ from app.ml.model import model
 from app.models.book import Book
 from app.models.user_book import UserBook
 
+from sklearn.metrics.pairwise import cosine_similarity
+
 from sqlalchemy import func
 
 
