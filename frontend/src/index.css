@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+
+@import "tailwindcss";
+
+/* ---------------- THEME VARIABLES ---------------- */
+
+@layer base {
+  :root {
+    --color-background: #0f0f23;
+    --color-foreground: #e2e8f0;
+
+    --color-card: #1e1b4b;
+    --color-card-foreground: #f1f5f9;
+
+    --color-muted: #334155;
+    --color-muted-foreground: #94a3b8;
+
+    --color-border: #475569;
+
+    --color-primary: #60a5fa;
+    --color-secondary: #818cf8;
+    --color-accent: #a78bfa;
+
+    --font-heading: "Crimson Text", serif;
+    --font-body: "Source Sans Pro", sans-serif;
+    --font-cta: "Inter", sans-serif;
+    --font-accent: "Playfair Display", serif;
+
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-book: 0 4px 16px rgba(96, 165, 250, 0.2);
+    --shadow-hover: 0 8px 32px rgba(96, 165, 250, 0.25);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+
+  .font-cta {
+    font-family: var(--font-cta);
+  }
+}
+
+/* ---------------- COMPONENT UTILITIES ---------------- */
+
+@layer components {
+  .literary-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .book-shadow {
+    box-shadow: var(--shadow-book);
+  }
+
+  .book-hover {
+    transition: all 0.3s ease;
+  }
+
+  .book-hover:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .literary-transition {
+    transition: all 0.3s ease;
+  }
+
+  .golden-glow {
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.4);
+  }
+}
+
+/* ---------------- EXTRA VISUAL EFFECTS ---------------- */
+
+.gradient-text {
+  background: linear-gradient(90deg, #60a5fa, #818cf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/* Skeleton shimmer */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #2a2a3b;
+  border-radius: 0.5rem;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

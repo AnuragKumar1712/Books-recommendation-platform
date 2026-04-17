@@ -1,0 +1,21 @@
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# Database
+sqlalchemy==2.0.29
+pydantic==2.6.4
+
+# Auth & Security
+python-jose==3.3.0
+passlib[bcrypt]==1.7.4
+
+# File/Image handling
+python-multipart==0.0.9
+
+# Data processing (for recommendations)
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.4.2
+
+# Environment variables
+python-dotenv==1.0.1
